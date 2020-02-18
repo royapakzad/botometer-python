@@ -1,7 +1,7 @@
 
 # Botometer Python API
 
-With this piece of python code, you can extract a user's follwoers and run botometer to figure out whether they show bot-like bahvior or not. The original code is from IUNetSci/botometer-python with some additional feature to extract followers from Twitter and only showing the Universal score of that acccount. 
+With this piece of python code, you can extract a user's follwoers and run botometer to figure out whether they show bot-like bahvior or not. From [IUNetSci/botometer-python](https://github.com/IUNetSci/botometer-python) with some additional feature to extract followers from Twitter and only showing the Universal score of that acccount. 
 
 A Python API for [Botometer by OSoMe](https://osome.iuni.iu.edu).
 
@@ -9,16 +9,11 @@ A Python API for [Botometer by OSoMe](https://osome.iuni.iu.edu).
 
 ### Mashape Market API key
 Our API is served via [Mashape Market](//market.mashape.com). You must sign up
-for a free account in order to obtain a Mashape secret key. The easiest way to
-get your secret key is to visit
-[our API endpoint page](https://market.mashape.com/OSoMe/botometer)
-and look in the "Request Example" as shown below:
-![Screenshot of Mashape "Request example"](/docs/mashape_key.png)
+for a free account in order to obtain a Mashape secret key. 
     
 ### Twitter app
 In order to access Twitter's API, one needs to have/create a [Twitter app](https://apps.twitter.com/).
-Once you've created an app, the authentication info can be found in the "Keys and Access Tokens" tab of the app's properties:
-![Screenshot of app "Keys and Access Tokens"](/docs/twitter_app_keys.png)
+Once you've created an app, the authentication info can be found in the "Keys and Access Tokens" tab of the app's properties
 
 ### Installation 
 From your command shell install botometer, tweepy, csv, json, and pandas. 
