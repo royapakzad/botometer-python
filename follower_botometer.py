@@ -21,7 +21,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # extract twitter user A's followers 
-users = tweepy.Cursor(api.followers, screen_name="farhangjan").items()
+users = tweepy.Cursor(api.followers, screen_name="RoyaPak").items()
 print(users)
 
 #save user A's follwers as CSV file
@@ -48,7 +48,7 @@ def processing_loop(csvfile):
         time.sleep(5)
 
 # write to a CSV file
-with open('farhangjan.csv', 'w') as csvfile:
+with open('filename.csv', 'w') as csvfile:
     processing_loop(csvfile)
 
 twitter_app_auth = {
@@ -60,16 +60,16 @@ twitter_app_auth = {
 bom=botometer.Botometer(wait_on_ratelimit=True, mashape_key=mashape_key, **twitter_app_auth)
 #check a sequence of accounts and their disagregated bot score
 data=[]
-temp=pandas.read_csv("farhangjan.csv", header=0)
+temp=pandas.read_csv("filename.csv", header=0)
 print(temp)
 accounts = list(temp.screen_name)
 print(accounts)
 for screen_name, result in bom.check_accounts_in(accounts):
 	data.append(result)
-	with open("farhangjan.json", "w") as write_file:
+	with open("filename.json", "w") as write_file:
 		json.dump(data, write_file, indent=4)
 # to keep only the main score
-with open('farhangjan.json') as data_file:
+with open('filename.json') as data_file:
     data = json.load(data_file)
 for element in data:
     element.pop('categories', None)
@@ -77,5 +77,5 @@ for element in data:
     element.pop('cap', None)
 for element in data:
     element.pop('scores', None)
-with open('farhangjan.json', 'w') as data_file:
+with open('filename.json', 'w') as data_file:
     data = json.dump(data, data_file, indent=4)
