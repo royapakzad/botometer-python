@@ -50,14 +50,7 @@ def processing_loop(csvfile):
 # write to a CSV file
 with open('filename.csv', 'w') as csvfile:
     processing_loop(csvfile)
-
-twitter_app_auth = {
-    'consumer_key': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    'consumer_secret': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    'access_token': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    'access_token_secret': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
-
-bom=botometer.Botometer(wait_on_ratelimit=True, mashape_key=mashape_key, **twitter_app_auth)
+bom=botometer.Botometer(wait_on_ratelimit=True, mashape_key=mashape_key, consumer_key=consumer_key, consumer_secret=consumer_secret  )
 #check a sequence of accounts and their disagregated bot score
 data=[]
 temp=pandas.read_csv("filename.csv", header=0)
