@@ -61,7 +61,7 @@ for screen_name, result in bom.check_accounts_in(accounts):
 	data.append(result)
 	with open("filename.json", "w") as write_file:
 		json.dump(data, write_file, indent=4)
-# to keep only the main score
+# to keep only the display_scores
 with open('filename.json') as data_file:
     data = json.load(data_file)
 for element in data:
